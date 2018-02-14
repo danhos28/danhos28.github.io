@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Body Mass Index</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
+  
+  <style>
+ 
+  .affix {
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+  ul.nav li.dropdown:hover ul.dropdown-menu{display:block;}
+	#caption{caption-side:top;}
+  table {margin-top:1px}
+  </style>
+
+</head>
+<body>
+
+<div class="container-fluid" style="background-color:#7575a3;color:#fff;height:200px;">
+  <h1>GET HEALTHY</h1>
+  <h3>Calculate your Body Mass Index</h3>
+  <p>BMI compares your weight to your height, and is calculated by dividing your weight (in kilograms) by your height (in metres squared). 
+It gives you an idea of whether you’re 'underweight', a 'healthy' weight, 'overweight', or 'obese' for your height. 
+BMI is one type of tool to help health professionals assess the risk for chronic disease. 
+Another important tool is waist circumference. 
+It is also important to understand your other risk factors.</p>
+</div>
+
+<nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+  <ul class="nav navbar-nav">
+    <li class="active"><a href="#">Body Mass Index</a></li>
+    <li><a href="page1.html">What is BMI?</a></li>
+    
+  </ul>
+</nav>
+
+
+
+<div class="container-fluid" style="height:800px">
+<p>This calculator computes the body mass index and rates it appropriately for men, women, children, juveniles and seniors, now also for Asian users. 
+The SBMI – an index that has been newly developed especially for this calculator – serves for this purpose. 
+It is based on the results of the most comprehensive study* published so far on the BMI and its associated health risks.</P>
+  <table id="caption" border="0" table align="center" width="50%" height="30%">
+  <caption><h3>ENTER YOUR HEIGHT AND WEIGHT</h3></caption>
+<form name="bmiForm">
+	<tr><td><p>Your Weight(kg)</p></td><td>: <input type="text" name="weight" size="10">
+	</td></tr><br /><br>
+    </select></td></tr><br>
+	
+	<tr><td><p>Your Height(cm)</P></td><td>: <input type="text" name="height" size="10">
+	 <tr><td><br><input type="button" class="btn" value="Calculate BMI" onClick="calculate()" ></td></tr><br />
+	<tr><td><br><p>Your BMI</p></td><td><br>: <input type="text" name="bmi" size="10"></td></tr><br />
+		<tr><td><p>This Means</p></td><td>: <input type="text" name="meaning" size="25"></td></tr><br />
+	<tr><td><br><input type="reset" class="btn btn-danger" value="Reset" /></td></tr>
+</table><br>
+<h2>Conclusion :</h2>
+<div id="body"></div>
+<div id="bmi1"></div>
+<div id="note"></div>
+<div id="note1"></div>
+
+</form>
+</div>
+
+<script language="JavaScript">
+<!--
+
+function calculate() {
+var weight = document.bmiForm.weight.value
+var height = document.bmiForm.height.value
+document.getElementById('body').innerHTML = "Your Weight is "+weight+" Kg and Your Height is "+height+ " Cm.";
+var hasil;
+var hasil2;
+var hasil3;
+var hasil4;
+var rumus = weight/(height/100*height/100);
+
+finalBmi = rumus.toFixed(2);
+
+document.getElementById('bmi1').innerHTML = "Your BMI is "+ finalBmi;
+hasil ="<h2>You are underweight</h2> Being underweight is defined as having a body mass index (BMI) below 18.5. This is estimated to be less than the body mass needed to sustain optimal health.<ul><b><li>Danger of Nutrient Deficiencies</b></li>When you have a below-normal BMI, you're probably not eating enough calories to maintain a healthy weight, which puts your body at risk for deficiencies in nutrients that support overall good health. A lack of calcium and vitamin D in the diet, for example, can lead to fragile bones and osteoporosis, a condition in which your bones weaken and can fracture easily. <li><b>Impaired Immunity</b></li>A weakened immune system is another top health risk associated with an underweight condition. When you don't get enough nourishment, you'll lack energy for everyday activities, and your body won't have enough of certain nutrients, such as protein and antioxidants, that strengthen your immune function. Protein is needed to make hormones and enzymes, and it's critical for healing wounds and synthesizing cells that fight infection.<li><b>Female Reproductive Issues</b></li>A top health risk for underweight women is reproductive problems. Being underweight causes hormonal imbalances that may halt or disrupt the menstrual cycle. Women with a below-normal BMI may find it more difficult to get pregnant, sometimes taking a year or more to do so.  ";
+result4 ="<h3>Solution</h3><ul><li><b>Eat More Calories Than Your Body Burns</b></li>  The most important thing you can do to gain weight is to eat more calories than your body needs. A caloric surplus (calories in > calories out) is needed. Without it, you won't gain. <li><b>Eat Lots of Protein</b></lI>  The single most important nutrient for gaining healthy weight is protein. Muscle is made of protein, and without it most of those extra calories may end up as body fat. Studies show that during periods of overfeeding, a high protein diet causes many of the extra calories to be turned into muscle. <li><b>Lift Heavy Weights and Improve Your Strength</b></li>  In order to make sure that the excess calories go to your muscles instead of just your fat cells, it is absolutely crucial to lift weights. Go to a gym and lift, 2-4 times per week. Lift heavy, and try to increase the weights and volume over time. If you are completely out of shape or you are new to training, then consider hiring a qualified personal trainer to help you get started.";
+
+hasil2 ="<h2>You are Healthy, keep it up</h2>Good! Your body is ideal ";
+result3 ="<h3>How to stay Healthy</h3><ul><li><b>Eat Properly</b></li> Consume more fruit and vegetables, more protein, fat-free or low fat milk. Consume less fats and sugars, sodium, alcohol and Dietary cholersterol. While these guidelines are useful, it’s hard to follow all of this in day-to-day life.  The most important thing is something my grandmother always said:  “moderation in all things.”  Don’t over-eat, and eat a variety of foods.  Balance your intake.  The way to lose weight is to eat fewer calories over the course of each day.  Another important practice is to eat breakfast.<li><b>Exercise</b></li>Once you’ve balanced your diet and limited calorie intake, you need to balance your calorie expenditure.  “Calories in and calories out” is a good focus.  If you burn more calories than you consume, weight will drop.  If you eat more calories than you burn, usually you will gain weight as the body stores the excess.<li><b>Sleep</b></li>Finally, after eating right and exercising, you need to sleep.  The average adult needs about eight hours of sleep per night.  Sleep is the great cure-all.  It is a time when your body recovers, and when your immune system is improved.</ul>";
+
+hasil3 ="<h2>You are overweight</h2> Being overweight or fat is having more body fat than is optimally healthy. Being overweight is especially common where food supplies are plentiful and lifestyles are sedentary. A healthy body requires a minimum amount of fat for proper functioning of the hormonal, reproductive, and immune systems, as thermal insulation, as shock absorption for sensitive areas, and as energy for future use. But the accumulation of too much storage fat can impair movement, flexibility, and alter the appearance of the body.Excess weight may increase the risk for many health problems, including <ul><li> Heart disease and stroke</li><li>High blood pressure</li><li>Diabetes</li><li> Osteoarthritis</li><li>Gout</li><li> Breathing problems, such as sleep apnea (when a person stops breathing for short episodes during sleep) and asthma</li>"
+result2 = "<h3>Solution</h3><li><b>Eat Protein, Fat and Vegetables</b></li> Each one of your meals should include a protein source, a fat source and low-carb vegetables. Constructing your meals in this way will automatically bring your carb intake into the recommended range of 20-50 grams per day.<li><b>Lift Weights 3 Times Per Week</b></li> You don't need to exercise to lose weight on this plan, but it is recommended. The best option is to go to the gym 3-4 times a week. Do a warm up, lift weights, then stretch.If you're new to the gym, ask a trainer for some advice."
+
+hasil4 ="<h2>You are Obese</h2> <br>Obesity is a term that means you weigh at least 20% more than what is considered a normal weight for your height.It makes you more likely to have conditions including:<ul><li> Heart disease and stroke</li><li>High blood pressure</li><li>Diabetes</li><li> Osteoarthritis</li><li>Gout</li><li> Breathing problems, such as sleep apnea (when a person stops breathing for short episodes during sleep) and asthma</li>"
+result = "<h3>Solution</h3>The objectives of treatment for all forms of diabetes are the same: to improve the uptake of glucose at a cellular level and to maintain blood glucose levels within a tight spectrum. Vitamin, mineral and botanical supplementation can be effective in achieving these objectives.<ul><li><b>Vitamin D</b></li>Our bodies make Vitamin D when they are exposed to sufficient quantities of sunlight.<li><b>Chromium</b></li>Good food sources of chromium include romaine lettuce, tomatoes and onions. While chromium is found in many foods, it tends to be there in very small amounts. As a result, it is often necessary to take chromium as a supplement if a therapeutic level of the nutrient is needed.<li><b>Vanadium</b></li>Vanadium is another mineral that has been shown to help normalize blood glucose levels, possibly through an insulin-like effect on cells. Food sources of vanadium include seafood, mushrooms and culinary herbs such as black pepper, dill and parsley. "
+
+if(weight > 0 && height > 0){	
+document.bmiForm.bmi.value = finalBmi;
+if(finalBmi < 18.5){
+document.bmiForm.meaning.value = "That you are underweight.",document.getElementById("note").innerHTML=hasil,document.getElementById("note1").innerHTML=result4;;
+}
+
+if(finalBmi > 18.5 && finalBmi < 25){
+document.bmiForm.meaning.value = "That you are healthy.",document.getElementById("note").innerHTML=hasil2,document.getElementById("note1").innerHTML=result3;
+}
+if(finalBmi > 25 && finalBmi < 29.9){
+document.bmiForm.meaning.value = "That you are overweight.",document.getElementById("note").innerHTML=hasil3,document.getElementById("note1").innerHTML=result2;
+}
+
+if(finalBmi > 30){
+document.bmiForm.meaning.value = "Obesity.",document.getElementById("note").innerHTML=hasil4,document.getElementById("note1").innerHTML=result;
+}x
+}
+else{
+alert("Please Fill in everything correctly")
+}
+}
+//-->
+</script>
+</body>
+</html>
