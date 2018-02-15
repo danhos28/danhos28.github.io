@@ -53,13 +53,14 @@ It is based on the results of the most comprehensive study* published so far on 
   <table id="caption" border="0" table align="center" width="50%" height="30%">
   <caption><h3>ENTER YOUR HEIGHT AND WEIGHT</h3></caption>
 <form name="bmiForm">
-	<tr><td><p>Your Weight(kg)</p></td><td>: <input type="text" name="weight" size="10">
+	<tr><td><p>Name</p></td><td>: <input type="text" name="name" size="15"></tr>
+	<tr><td><p>Gender</p></td><td>: <input type="radio" name="gender" value="male"> male  <input type="radio" name="gender" value="female"> female </td></tr>
+	<tr><td><p>Age</p></td><td>: <input type="text" name="age" size="5"></td></tr>
+	<tr><td><p>Your Weight(kg)</p></td><td>: <input type="text" name="weight" size="5">
 	</td></tr><br /><br>
-    </select></td></tr><br>
-	
-	<tr><td><p>Your Height(cm)</P></td><td>: <input type="text" name="height" size="10">
-	 <tr><td><br><input type="button" class="btn" value="Calculate BMI" onClick="calculate()" ></td></tr><br />
-	<tr><td><br><p>Your BMI</p></td><td><br>: <input type="text" name="bmi" size="10"></td></tr><br />
+    <tr><td><p>Your Height(cm)</P></td><td>: <input type="text" name="height" size="5">
+	 <tr><td><br><br><br><input type="button" class="btn" value="Calculate BMI" onClick="calculate()" ></td></tr><br />
+	<tr><td><br><p>Your BMI</p></td><td><br>: <input type="text" name="bmi" size="15"></td></tr><br />
 		<tr><td><p>This Means</p></td><td>: <input type="text" name="meaning" size="25"></td></tr><br />
 	<tr><td><br><input type="reset" class="btn btn-danger" value="Reset" /></td></tr>
 </table><br>
@@ -78,7 +79,9 @@ It is based on the results of the most comprehensive study* published so far on 
 function calculate() {
 var weight = document.bmiForm.weight.value
 var height = document.bmiForm.height.value
-document.getElementById('body').innerHTML = "Your Weight is "+weight+" Kg and Your Height is "+height+ " Cm.";
+var name = document.bmiForm.name.value
+var age = document.bmiForm.age.value
+document.getElementById('body').innerHTML =  "Hello " +name+ " at the age of	" +age+  " your Weight is "+weight+" Kg and Your Height is "+height+ " Cm.";
 var hasil;
 var hasil2;
 var hasil3;
