@@ -62,7 +62,9 @@ It is based on the results of the most comprehensive study* published so far on 
 	 <tr><td><br><br><br><input type="button" class="btn" value="Calculate BMI" onClick="calculate()" ></td></tr><br />
 	<tr><td><br><p>Your BMI</p></td><td><br>: <input type="text" name="bmi" size="15"></td></tr><br />
 		<tr><td><p>This Means</p></td><td>: <input type="text" name="meaning" size="25"></td></tr><br />
-	<tr><td><br><input type="reset" class="btn btn-danger" value="Reset" /></td></tr>
+	<tr><td><br><input type="reset" class="btn btn-danger" value="Reset" /></td>
+	<td><br><input type="button" class="btn" value="Result" onClick="scrollwin(0,800)" ></td></tr></tr>
+
 </table><br>
 <h2>Conclusion :</h2>
 <div id="body"></div>
@@ -75,6 +77,9 @@ It is based on the results of the most comprehensive study* published so far on 
 
 <script language="JavaScript">
 <!--
+function scrollwin(x, y) {
+    window.scrollBy(x, y);
+}
 
 function calculate() {
 var weight = document.bmiForm.weight.value
@@ -90,7 +95,7 @@ var rumus = weight/(height/100*height/100);
 
 finalBmi = rumus.toFixed(2);
 
-document.getElementById('bmi1').innerHTML = "Your BMI is "+ finalBmi;
+document.getElementById('bmi1').innerHTML = "Based on your height and your weight, Your BMI is "+ finalBmi;
 hasil ="<h2>You are underweight</h2> Being underweight is defined as having a body mass index (BMI) below 18.5. This is estimated to be less than the body mass needed to sustain optimal health.<ul><b><li>Danger of Nutrient Deficiencies</b></li>When you have a below-normal BMI, you're probably not eating enough calories to maintain a healthy weight, which puts your body at risk for deficiencies in nutrients that support overall good health. A lack of calcium and vitamin D in the diet, for example, can lead to fragile bones and osteoporosis, a condition in which your bones weaken and can fracture easily. <li><b>Impaired Immunity</b></li>A weakened immune system is another top health risk associated with an underweight condition. When you don't get enough nourishment, you'll lack energy for everyday activities, and your body won't have enough of certain nutrients, such as protein and antioxidants, that strengthen your immune function. Protein is needed to make hormones and enzymes, and it's critical for healing wounds and synthesizing cells that fight infection.<li><b>Female Reproductive Issues</b></li>A top health risk for underweight women is reproductive problems. Being underweight causes hormonal imbalances that may halt or disrupt the menstrual cycle. Women with a below-normal BMI may find it more difficult to get pregnant, sometimes taking a year or more to do so.  ";
 result4 ="<h3>Solution</h3><ul><li><b>Eat More Calories Than Your Body Burns</b></li>  The most important thing you can do to gain weight is to eat more calories than your body needs. A caloric surplus (calories in > calories out) is needed. Without it, you won't gain. <li><b>Eat Lots of Protein</b></lI>  The single most important nutrient for gaining healthy weight is protein. Muscle is made of protein, and without it most of those extra calories may end up as body fat. Studies show that during periods of overfeeding, a high protein diet causes many of the extra calories to be turned into muscle. <li><b>Lift Heavy Weights and Improve Your Strength</b></li>  In order to make sure that the excess calories go to your muscles instead of just your fat cells, it is absolutely crucial to lift weights. Go to a gym and lift, 2-4 times per week. Lift heavy, and try to increase the weights and volume over time. If you are completely out of shape or you are new to training, then consider hiring a qualified personal trainer to help you get started.";
 
@@ -124,6 +129,8 @@ else{
 alert("Please Fill in everything correctly")
 }
 }
+
+
 //-->
 </script>
 </body>
